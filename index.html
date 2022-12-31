@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <title>Kings Light Bulb Game</title>
+
+</head>
+<body>
+    <main class="container-fluid">
+        <div class="row">
+            <div class="col-lg-5 maincontent">
+                <h1>Light Bulbs</h1>
+            
+                <div id="enterName">
+                    <span>Please enter your name to begin:</span>
+                    <input type="text" id="playerName">
+                    <button id="beginGame" class="blueButton">Begin Game</button>
+                </div>
+            
+                <div id="description" hidden>
+            
+                    <h2 id="welcomeMessage"></h2>
+            
+                    <h3>Game Description</h3>
+                
+                    <ul>
+                        <li>The king's palace has rooms with square shaped floors that consist of black and white tiles only.</li>
+                        <li>Light bulbs can only be placed above white tiles.</li>
+                        <li>The light from the light bulbs does not spread diagonally, only straight along the given row and column.</li>
+                        <li>The black tiles have objects placed on them, which block the propagation of light</li>
+                        <li>Black cells can optionally contain an integer from 0 to 4. This indicates how many adjacent (bottom, top, right, left) cells contain light bulbs. If there is such a number, the puzzle must be solved accordingly!</li>
+                        <li>Two light bulbs can NEVER illuminate each other!</li>
+                        <li>The goal of the game is to place the light bulbs so that all the white tiles are illuminated.</li>
+                        <li>The game is played by one player until he solves the puzzle, so there is no need to manage multiple players at the same time or divide into rounds.</li>
+                    </ul>
+                </div>
+            
+                
+            
+                <div id="homeSection" hidden>
+                        <button id="mapSelectButton" class="blueButton">Map Selector</button>
+                        <button id="loadSavedButton" class="blueButton">Load Saved Game</button>
+                        <button id="mapEditorButton" class="blueButton">Map Editor</button>
+                        <button id="resultButton" class="blueButton">Previous Results</button>
+                </div>
+            </div>
+
+
+            <div class="col-lg-7 playArea">          
+                <div id="mapSelector" hidden>
+                    <span>Choose a map: </span>
+                    <select name="Choose a map" id="selector" class="selectors">
+                    </select>
+                    <button id="startGame">Start Game</button>
+                    <table id="selectorTable" class="map"></table>
+                </div>
+            
+                <div id="gameArea" hidden>
+                    <div id="timer">
+                        <div id="timer"><span id="minute">00</span>:<span id="second">00</span></div>
+                    </div>
+                    <table id="gameTable" class="map"></table>
+                    <h3 id="winMessage" hidden>Congratulations you won!</h3>
+                    <button id="saveGame">Save Game</button>
+                    <button id="restartGame">Restart Game</button>
+                </div>
+            
+                <div id="mapEditor" hidden>
+                    <button id="createNewMapButton">Create New Map</button>
+                    <button id="loadMapEditButton">Load Map</button>
+                    <div id="mapEditorInner" hidden>
+                        <div id="loadEditMap" hidden>
+                            <span>Choose a saved Map:</span>
+                            <select name="Choose a saved Map" id="editorSelector" class="selectors">
+                            </select>
+                        </div>
+                        <div id="createNewMap" hidden>
+                            <span>Set the table size: </span>
+                            <input type="number" id="tableSize" name="Table Size" min="1" max="20" value="7">
+                            <button id="generateTable">Create Empty Table</button>
+                        </div>
+                        <table id="editorTable" class="map"></table>
+                        <button id="saveMap">Save Map</button>
+                    </div>
+                </div>
+
+                <h4 id="noSavedGames" hidden>You have no Saved Games</h4>
+                <div id="loadSavedSection" hidden>
+                    <span>Continue a saved game: </span>
+                    <select name="Choose a map" id="loadSavedGameSelector" class="selectors">
+                    </select>
+                    <button id="continueGame">Continue Game</button>
+                    <table id="savedGameTable" class="map"></table>
+                </div>
+
+                <div id="resultSection" hidden>
+                    <table id="resultTable">
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="index.js"></script>
+    <script src="arrays.js"></script>
+    <script src="functions.js"></script>
+</body>
+</html>
