@@ -1,9 +1,9 @@
-#Wep-Programming-Javascript-Assignmnet
+# Wep-Programming-Javascript-Assignmnet
 
 The task was to use JS to create the King's Lightbulb Game:
 [The game can be found here](https://people.inf.elte.hu/odp6c6/js_assignment/)
 
-###The rules for the game are as follows
+### The rules for the game are as follows
 The king's palace has rooms with square shaped floors that consist of black and white tiles only.
 Light bulbs can only be placed above white tiles.
 The light from the light bulbs does not spread diagonally, only straight along the given row and column.
